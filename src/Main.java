@@ -22,9 +22,13 @@ public class Main {
                     Inventory.Inventory();
                     break;
                 case 3:
-//                    Sales page
+                    Sales_page.Sales_page();
+                    break;
                 case 4:
                     System.out.println("Thank you for using Grocery Store Management System");
+                    break;
+                default:
+                    System.out.println("Your input is invalid. Please type the corresponding number.");
             }
         }while (continue_input != 4);
     }

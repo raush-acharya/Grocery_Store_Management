@@ -8,13 +8,15 @@ public class Inventory {
         String item;
         int quantity;
         double price;
+        double total;
         System.out.println("Your Inventory:");
-        System.out.println("Sn.    Items       Price     Quantity");
+        System.out.println("Sn.    Items       Price     Quantity      Total");
         for (i=0;i<=Loop_count;i++){
             item = Add_items.Send_items(i);
             quantity = Add_items.Send_quantity(i);
             price = Add_items.Send_price(i);
-            System.out.println(i+1 +"      "+ item + "       Rs" + price + "      " + quantity);
+            total=quantity*price;
+            System.out.println(i+1 +"      "+ item + "       Rs" + price + "      " + quantity+ "            "+total);
         }
         System.out.println("Press any key to continue.");
         scanner.nextLine();
