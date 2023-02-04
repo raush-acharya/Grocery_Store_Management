@@ -16,10 +16,10 @@ public class Main {
 
             switch (continue_input){
                 case 1:
-//                    add items to inventory
+                    Add_items.Add_items();
                     break;
                 case 2:
-//                    view inventory
+                    Inventory.Inventory();
                     break;
                 case 3:
 //                    Sales page
