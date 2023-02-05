@@ -18,8 +18,7 @@ public class Inventory {
             total=quantity*price;
             System.out.println(i+1 +"      "+ item + "       Rs" + price + "      " + quantity+ "            "+total);
         }
-        System.out.println("Press any key to continue.");
-        scanner.nextLine();
+
     }
 
 

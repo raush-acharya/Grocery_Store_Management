@@ -22,6 +22,9 @@ public class Main {
                     break;
                 case 2:
                     Inventory.Inventory();
+                    System.out.println("Press any key to continue.");
+                    scanner.nextLine();
+                    scanner.nextLine();
                     break;
                 case 3:
                     Sales_page.Sales_page();
