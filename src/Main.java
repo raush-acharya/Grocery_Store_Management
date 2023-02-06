@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +15,16 @@ public class Main {
             System.out.println("3: Sales Page");
             System.out.println("4: Exit");
 
-            continue_input = scanner.nextInt();
+            while (true) {
+                try {
+                    continue_input = scanner.nextInt();
+                    break;
+                } catch (InputMismatchException exception) {
+                    System.out.println("You have to type in an integer!");
+                }
+                scanner.nextLine();
+            }
+
 
             switch (continue_input){
                 case 1:

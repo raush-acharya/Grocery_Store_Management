@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Sales_page {
@@ -19,8 +20,16 @@ public class Sales_page {
         Inventory.Inventory();
         do{
             System.out.println("Enter the number corresponding to the item you want to buy.");
-            S_N = scanner.nextInt();
-            scanner.nextLine();
+            while (true) {
+                try {
+                    S_N = scanner.nextInt();
+                    break;
+                } catch (InputMismatchException exception) {
+                    System.out.println("You have to type in an integer!");
+                }
+                scanner.nextLine();
+            }
+
             item = Add_items.Send_items(S_N-1);
 
 //            To check if user has already bought the item
@@ -30,16 +39,38 @@ public class Sales_page {
                 System.out.println("Enter How many "+ bill_items.get(index) + "s you want to add");
 
 //                To check whether we have enough quantity available
-                int quantity_check = scanner.nextInt() + bill_quantity.get(index);
+                int quantity_check;
+                while (true) {
+                    try {
+                        quantity_check = scanner.nextInt() + bill_quantity.get(index);
+                        break;
+                    } catch (InputMismatchException exception) {
+                        System.out.println("You have to type in an integer!");
+                    }
+                    scanner.nextLine();
+                }
+
+
                 quantity = Sales_page.Quantity_checker(quantity_check,index);
 
 
             }
             else {
                 index = S_N-1;
+                int quantity_check;
                 bill_items.add(item);
                 System.out.println("How many "+ item +"s do you want to buy?");
-                int quantity_check = scanner.nextInt();
+                while (true) {
+                    try {
+                        quantity_check = scanner.nextInt();
+                        break;
+                    } catch (InputMismatchException exception) {
+                        System.out.println("You have to type in an integer!");
+                    }
+                    scanner.nextLine();
+                }
+
+
                 quantity =  Sales_page.Quantity_checker(quantity_check,index);
                 scanner.nextLine();
 
@@ -48,8 +79,16 @@ public class Sales_page {
             Add_items.change_quantity();
             System.out.println("Press 1 to continue shopping.");
             System.out.println("Press 2 to generate bill.");
-            input_listener = scanner.nextInt();
-            scanner.nextLine();
+            while (true) {
+                try {
+                    input_listener = scanner.nextInt();
+                    break;
+                } catch (InputMismatchException exception) {
+                    System.out.println("You have to type in an integer!");
+                }
+                scanner.nextLine();
+            }
+
 
             switch (input_listener){
                 case 1:
