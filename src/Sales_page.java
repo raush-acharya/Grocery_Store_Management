@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -107,9 +108,11 @@ public class Sales_page {
     }
 
     public static void generate_bill(){
+        Formatter formatter = new Formatter();
         double Grand_total = 0;
         System.out.println("Here is your bill");
-        System.out.println("Sn.    Items       Price     Quantity      Total");
+//        System.out.println("Sn.    Items       Price     Quantity      Total");
+        formatter.format("%15s %15s %15s %15s %15s\n","Sn.","Items","Price","Quantity","Total");
 
         for(int counter = 0; counter < bill_items.size(); counter++){
             String Item = bill_items.get(counter);
@@ -118,6 +121,7 @@ public class Sales_page {
             double total = Quantity * Price;
             Grand_total = Grand_total + total;
             System.out.println(counter+1 + "      " + Item + "      " + Price + "      " + Quantity + "      " + total);
+            formatter.format("%15s %15s %15s %15s %15s\n",counter+1,Item,Price,Quantity,total);
         }
         System.out.println("Please pay Rs."+ Grand_total);
         System.out.println("Thank you for shopping using Grocery Store Management System");
