@@ -14,7 +14,7 @@ public class Main {
             System.out.println("2: View inventory");
             System.out.println("3: Sales Page");
             System.out.println("4: Exit");
-
+//            Try and catch for input type mismatch
             while (true) {
                 try {
                     continue_input = scanner.nextInt();

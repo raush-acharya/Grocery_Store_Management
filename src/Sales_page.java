@@ -107,11 +107,11 @@ public class Sales_page {
         }while (loop_runner);
     }
 
+//    to generate bill
     public static void generate_bill(){
         Formatter formatter = new Formatter();
         double Grand_total = 0;
         System.out.println("Here is your bill");
-//        System.out.println("Sn.    Items       Price     Quantity      Total");
         formatter.format("%15s %15s %15s %15s %15s\n","Sn.","Items","Price","Quantity","Total");
 
         for(int counter = 0; counter < bill_items.size(); counter++){
@@ -131,6 +131,8 @@ public class Sales_page {
         bill_quantity.clear();
         bill_items.clear();
     }
+
+//    indexing and calculation in change_quantity in add items class
     public static int user_selection() {
         return S_N-1;
     }
@@ -138,6 +140,8 @@ public class Sales_page {
         return quantity;
     }
 
+
+//    to check whether there is enough quantity of items available in the inventory
     public static int Quantity_checker(int quantity_check, int index){
 
         if (quantity_check > Add_items.Send_quantity(index)){
