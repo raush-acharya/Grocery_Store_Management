@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Inventory {
-    static Scanner scanner = new Scanner(System.in);
+
     public static void Inventory() {
         int Loop_count = Add_items.Number_of_items() - 1;
         int i;
